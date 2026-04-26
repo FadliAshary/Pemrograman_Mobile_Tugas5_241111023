@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.fadlizuhriputraashary_241111023.HomeFragment"
+        android:label="Beranda"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.fadlizuhriputraashary_241111023.ListFragment"
+        android:label="Transaksi"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.fadlizuhriputraashary_241111023.ProfileFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.fadlizuhriputraashary_241111023.DetailFragment"
+        android:label="Detail Transaksi"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+</navigation>
